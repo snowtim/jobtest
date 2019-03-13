@@ -12,7 +12,7 @@ class UserController extends Controller
     protected function create(Request $request) {
 
     	$validator = Validator::make($request->all(), [
-    		'Account' => ['required', 'string', 'max:50'],
+    		'Account' => ['required', 'string', 'unique:users', 'max:50'],
     		'Password' => ['required', 'string', 'max:50']
     	]);
 
